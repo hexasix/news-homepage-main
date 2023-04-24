@@ -243,8 +243,15 @@ body main aside {
     margin:2rem auto;
     width: 85%;
   }
-  body header ul {
-    display: none;
+  body header nav {
+    position: absolute;
+    width: 50%;
+    display: block;
+    background-color: hsl(var(--neutral-off-white));
+    right:0;
+  }
+  body header nav ul{
+    flex-direction: column;
   }
   body main {
     display: grid;
@@ -282,4 +289,6 @@ body main aside {
     height: 100vh;
     display: none;
   }
+
+
 }
