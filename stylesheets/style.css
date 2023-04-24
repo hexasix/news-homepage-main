@@ -166,10 +166,12 @@ body main aside > div.flex-column{
   Style START
 --------------
 */
+/* main */
 
 /* main article overview readmore*/
 .readmore{
   --button-height:3.8rem;
+  width: 50% ;
   color:hsl(var(--neutral-off-white));
   font-size:1.5rem;
   letter-spacing: .2rem;
@@ -179,8 +181,13 @@ body main aside > div.flex-column{
   height: var(--button-height);
   display: flex;
   justify-content: center;
-  width: 50% ;
 }
+.readmore:hover{
+  cursor: pointer;
+  background-color: hsl(var(--neutral-very-dark-blue));
+}
+
+
 /* aside */
 body main aside{
   background-color: hsl(var(--neutral-very-dark-blue));
@@ -191,6 +198,10 @@ body main aside{
 .new-h3-overview:last-child{
   border-bottom: none;
 }
+.new-h3-overview h3:hover{
+  cursor: pointer;
+  color: hsl(var(--primary-soft-orange));
+}
 .new-h3-overview p{
   line-height: 2.3;
 }
@@ -198,8 +209,22 @@ body main aside{
 .trending-item .trending-item-overview{
   line-height: 1.5;
 }
+.trending-item .trending-item-title:hover{
+  cursor: pointer;
+  color:hsl(var(--primary-soft-red));
+}
 /* 
 --------------
   Style END
 --------------
 */
+@media (max-wdith:490px){
+body{
+  background-color: black;
+}
+
+main{
+  display:grid;
+  grid-template-columns:1fr; 
+}
+}
