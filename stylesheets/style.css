@@ -234,9 +234,9 @@ body main aside {
   /* layout */
   html {
     position: relative;
+
     /* stop the page from scrolling */
     /* height: 100vh;
-
      overflow: hidden;  */
   }
   body {
