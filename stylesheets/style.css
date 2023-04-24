@@ -243,4 +243,10 @@ body main aside {
     display: grid;
     grid-template-columns: 1fr;
   }
+  body main aside > div.flex-column {
+    gap: 3rem;
+  }
+  .new-h3-overview.flex-column:not(:last-child) {
+    padding-block-end:2rem ;
+  }
 }
