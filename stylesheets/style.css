@@ -71,10 +71,20 @@ body main aside div.new-h3-overview p {
   display: flex;
   flex-direction: column;
 }
+/* html{
+  display: flex;
+  justify-content: center;
+} */
 body {
-  width: 76.8rem;
+  /* width: 76.8rem; */
   /* center the body */
-  margin: 2rem auto;
+
+  display: flex;
+  justify-content: center;
+}
+.wrapper {
+  margin-top: 3rem;
+  width: 76.8rem;
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2.5rem;
@@ -212,13 +222,25 @@ body main aside {
   cursor: pointer;
   color: hsl(var(--primary-soft-red));
 }
+.filter {
+  display: none;
+}
 /* 
 --------------
   Style END
 --------------
 */
 @media (max-width: 900px) {
+  /* layout */
+  html {
+    position: relative;
+  }
   body {
+    display: block;
+    position: static;
+  }
+  .wrapper {
+    margin:2rem auto;
     width: 85%;
   }
   body header ul {
@@ -247,6 +269,17 @@ body main aside {
     gap: 3rem;
   }
   .new-h3-overview.flex-column:not(:last-child) {
-    padding-block-end:2rem ;
+    padding-block-end: 2rem;
+  }
+  /* filter layer */
+
+  .filter {
+    position: fixed;
+    top:0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    width: 100vw;
+    height: 100vh;
+    display: none;
   }
 }
