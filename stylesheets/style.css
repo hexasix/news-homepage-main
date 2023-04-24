@@ -249,11 +249,14 @@ body main aside {
   }
   body header nav {
     position: absolute;
+    top:0;
     width: 50%;
     height: 100vh;
     display: block;
     background-color: hsl(var(--neutral-off-white));
     right:0;
+    /* hide it on the right */
+    transform: translateX(100%);
   }
   body header nav ul{
     flex-direction: column;
