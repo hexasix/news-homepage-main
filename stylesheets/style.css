@@ -1,0 +1,11 @@
+@import url("./reset.css");
+@import url("./fonts.css");
+@import url("./variables.css");
+/* typography */
+:root{
+  font-family: "inter-regular";
+  font-size: var(--root-font-size);
+}
+/* layout */
+
+/* style */
