@@ -179,6 +179,9 @@ body main aside > div.flex-column {
 /* main */
 
 /* main article overview readmore*/
+.hamburger{
+  display: none;
+}
 .readmore {
   --button-height: 3.8rem;
   /* width: 11rem; */
