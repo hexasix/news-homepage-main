@@ -244,24 +244,29 @@ body main aside {
     position: static;
   }
   .wrapper {
-    margin:2rem auto;
-    width: 85%;
+    margin: 0;
+    width: 100%;
+    padding-block-start: 2rem;
+    padding-inline: calc(100% * 0.075);
+    height: 100vh;
+    /* Can be toggled to hidden */
+    overflow-y: scroll;
   }
   body header nav {
-    position: absolute;
-    top:0;
+    position: fixed;
+    top: 0;
     width: 50%;
     height: 100vh;
     display: block;
     background-color: hsl(var(--neutral-off-white));
-    right:0;
+    right: 0;
     /* hide it on the right */
     transform: translateX(100%);
   }
-  body header nav ul{
+  body header nav ul {
     flex-direction: column;
     position: relative;
-    margin:30% 0 0 0;
+    margin: 30% 0 0 0;
     width: 40%;
   }
   body main {
@@ -293,13 +298,43 @@ body main aside {
 
   .filter {
     position: fixed;
-    top:0;
+    top: 0;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     display: none;
   }
+  /* hamburger menu button */
+  .hamburger {
+    position: relative;
+    align-self: center;
+  }
+  .hamburger,
+  .hamburger::before,
+  .hamburger::after {
+    width: 2rem;
+    height: 3px;
+    background-color: hsl(var(--neutral-very-dark-blue));
+    z-index: 1;
+  }
 
-
+  .hamburger::before,
+  .hamburger::after {
+    content:"";
+    position:absolute;
+  }
+  .hamburger::before{bottom:6px}
+  .hamburger::after{top:6px}
+ 
+  .hamburger-active .hamburger{
+    transform:rotate(45deg)
+  }
+  .hamburger-active .hamburger::before{
+    transform: rotate(90deg) translateX(5px);
+  }
+  .hamburger-active .hamburger::after{
+    display: none;
+  }
+  /* nav list under hamburger active */
 }
