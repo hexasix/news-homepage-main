@@ -234,20 +234,17 @@ body main aside {
   /* layout */
   html {
     position: relative;
-
-    /* stop the page from scrolling */
-    /* height: 100vh;
-     overflow: hidden;  */
   }
   body {
     display: block;
     position: static;
   }
   .wrapper {
+    --padding-inline: calc(100% * 0.075);
     margin: 0;
     width: 100%;
     padding-block-start: 2rem;
-    padding-inline: calc(100% * 0.075);
+    padding-inline: var(--padding-inline);
     height: 100vh;
     /* Can be toggled to hidden */
     overflow-y: scroll;
@@ -255,20 +252,33 @@ body main aside {
   body header nav {
     position: fixed;
     top: 0;
-    width: 50%;
+    width: 65%;
     height: 100vh;
     display: block;
     background-color: hsl(var(--neutral-off-white));
     right: 0;
+    padding-inline-start: 2rem;
     /* hide it on the right */
     transform: translateX(100%);
+    transition: transform 0.5s ease;
   }
   body header nav ul {
     flex-direction: column;
     position: relative;
-    margin: 30% 0 0 0;
-    width: 40%;
+    align-items: start;
+    margin: 50% 0 0 0;
+    width: max-content;
   }
+body header nav ul > *{
+  align-self: start;
+}
+body header nav ul > * a{
+
+  /* typography */
+  font-size: 1.5rem;
+  font-weight:700;
+  color:hsl(var(--neutral-very-dark-blue));
+}
   body main {
     display: grid;
     grid-template-columns: 1fr;
@@ -317,24 +327,39 @@ body main aside {
     height: 3px;
     background-color: hsl(var(--neutral-very-dark-blue));
     z-index: 1;
+    transition: opacity 0.5s ease, transform 0.5s ease;
   }
 
   .hamburger::before,
   .hamburger::after {
-    content:"";
-    position:absolute;
+    content: "";
+    position: absolute;
   }
-  .hamburger::before{bottom:6px}
-  .hamburger::after{top:6px}
- 
-  .hamburger-active .hamburger{
-    transform:rotate(45deg)
+  .hamburger::before {
+    bottom: 6px;
   }
-  .hamburger-active .hamburger::before{
+  .hamburger::after {
+    top: 6px;
+  }
+
+  .hamburger-active .hamburger {
+    --padding-right: calc(100% * 0.075);
+    transform: rotate(45deg);
+    position: fixed;
+    right: var(--padding-inline);
+  }
+  .hamburger-active .hamburger::before {
     transform: rotate(90deg) translateX(5px);
   }
-  .hamburger-active .hamburger::after{
-    display: none;
+  .hamburger-active .hamburger::after {
+    opacity: 0;
   }
-  /* nav list under hamburger active */
+  .hamburger-active nav {
+    transform: translateX(0);
+    z-index: 0;
+  }
+  .hamburger-active .filter {
+    display: block;
+    z-index:0;
+  }
 }
